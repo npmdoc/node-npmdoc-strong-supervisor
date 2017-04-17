@@ -1,0 +1,3285 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/strongloop/strong-supervisor">strong-supervisor (v6.1.1)</a>
+</h1>
+<h4>supervisor and monitor for node.js applications</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor">module strong-supervisor</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.agent">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>agent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.chdir">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>chdir
+            <span class="apidocSignatureSpan">(directory)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.dashboard">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>dashboard
+            <span class="apidocSignatureSpan">(uri, appmetrics, dashboard)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.debug">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>debug
+            <span class="apidocSignatureSpan">(tag)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.logger">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>logger
+            <span class="apidocSignatureSpan">(sink)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.metrics">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>metrics
+            <span class="apidocSignatureSpan">(parentCtl, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.pidfile">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>pidfile
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.printf_replacer">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>printf_replacer
+            <span class="apidocSignatureSpan">(template, replacements)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.start_command">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>start_command
+            <span class="apidocSignatureSpan">(pwd, argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.tracer">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>tracer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.</span>__module</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.</span>adapter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.</span>app</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.</span>capabilities</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.</span>errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.</span>expander</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.</span>logger.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.</span>options</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.</span>runctl</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.</span>watcher</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.adapter">module strong-supervisor.adapter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.adapter.lrtime">
+            function <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>lrtime
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.adapter.profile">
+            function <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>profile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.adapter.start">
+            function <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>start
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.adapter.use">
+            function <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>use
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>_eventsCount</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>_events</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>domain</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>dyninst</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>internal</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>metrics</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.agent">module strong-supervisor.agent</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.agent.agent">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>agent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.app">module strong-supervisor.app</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.app.host">
+            function <span class="apidocSignatureSpan">strong-supervisor.app.</span>host
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.app.name">
+            function <span class="apidocSignatureSpan">strong-supervisor.app.</span>name
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.capabilities">module strong-supervisor.capabilities</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.capabilities.list">
+            function <span class="apidocSignatureSpan">strong-supervisor.capabilities.</span>list
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.capabilities.query">
+            function <span class="apidocSignatureSpan">strong-supervisor.capabilities.</span>query
+            <span class="apidocSignatureSpan">(featureName, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.chdir">module strong-supervisor.chdir</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.chdir.chdir">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>chdir
+            <span class="apidocSignatureSpan">(directory)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.config">module strong-supervisor.config</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">strong-supervisor.config.</span>isMaster</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">strong-supervisor.config.</span>isWorker</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">strong-supervisor.config.</span>profile</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.config.sendMetrics">
+            function <span class="apidocSignatureSpan">strong-supervisor.config.</span>sendMetrics
+            <span class="apidocSignatureSpan">(parentCtl, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.config.start">
+            function <span class="apidocSignatureSpan">strong-supervisor.config.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.config.watcher">
+            function <span class="apidocSignatureSpan">strong-supervisor.config.</span>watcher
+            <span class="apidocSignatureSpan">(parentCtl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">strong-supervisor.config.</span>size</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.config.</span>logger</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.dashboard">module strong-supervisor.dashboard</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.dashboard.dashboard">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>dashboard
+            <span class="apidocSignatureSpan">(uri, appmetrics, dashboard)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.dashboard._parse">
+            function <span class="apidocSignatureSpan">strong-supervisor.dashboard.</span>_parse
+            <span class="apidocSignatureSpan">(uri)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.debug">module strong-supervisor.debug</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.debug.debug">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>debug
+            <span class="apidocSignatureSpan">(tag)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.errors">module strong-supervisor.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.errors.ExitError">
+            function <span class="apidocSignatureSpan">strong-supervisor.errors.</span>ExitError
+            <span class="apidocSignatureSpan">(message, code)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.expander">module strong-supervisor.expander</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.expander.expand">
+            function <span class="apidocSignatureSpan">strong-supervisor.expander.</span>expand
+            <span class="apidocSignatureSpan">(str, worker)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.logger">module strong-supervisor.logger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.logger.logger">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>logger
+            <span class="apidocSignatureSpan">(sink)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.logger.prototype">module strong-supervisor.logger.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.logger.prototype.error">
+            function <span class="apidocSignatureSpan">strong-supervisor.logger.prototype.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.logger.prototype.info">
+            function <span class="apidocSignatureSpan">strong-supervisor.logger.prototype.</span>info
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.logger.prototype.log">
+            function <span class="apidocSignatureSpan">strong-supervisor.logger.prototype.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.logger.prototype.warn">
+            function <span class="apidocSignatureSpan">strong-supervisor.logger.prototype.</span>warn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.metrics">module strong-supervisor.metrics</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.metrics.metrics">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>metrics
+            <span class="apidocSignatureSpan">(parentCtl, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.options">module strong-supervisor.options</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.options.parse">
+            function <span class="apidocSignatureSpan">strong-supervisor.options.</span>parse
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">strong-supervisor.options.</span>HELP</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">strong-supervisor.options.</span>NAME</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.pidfile">module strong-supervisor.pidfile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.pidfile.pidfile">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>pidfile
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.pidfile.create">
+            function <span class="apidocSignatureSpan">strong-supervisor.pidfile.</span>create
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.pidfile.exists">
+            function <span class="apidocSignatureSpan">strong-supervisor.pidfile.</span>exists
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.printf_replacer">module strong-supervisor.printf_replacer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.printf_replacer.printf_replacer">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>printf_replacer
+            <span class="apidocSignatureSpan">(template, replacements)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.runctl">module strong-supervisor.runctl</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.runctl.notifyStarted">
+            function <span class="apidocSignatureSpan">strong-supervisor.runctl.</span>notifyStarted
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.runctl.onRequest">
+            function <span class="apidocSignatureSpan">strong-supervisor.runctl.</span>onRequest
+            <span class="apidocSignatureSpan">(req, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.runctl.start">
+            function <span class="apidocSignatureSpan">strong-supervisor.runctl.</span>start
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.runctl.</span>parentCtl</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.start_command">module strong-supervisor.start_command</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.start_command.start_command">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>start_command
+            <span class="apidocSignatureSpan">(pwd, argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.start_command.fromStart">
+            function <span class="apidocSignatureSpan">strong-supervisor.start_command.</span>fromStart
+            <span class="apidocSignatureSpan">(cwd, script)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.start_command.resolveDir">
+            function <span class="apidocSignatureSpan">strong-supervisor.start_command.</span>resolveDir
+            <span class="apidocSignatureSpan">(cwd, dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.start_command.resolvePackageFromPath">
+            function <span class="apidocSignatureSpan">strong-supervisor.start_command.</span>resolvePackageFromPath
+            <span class="apidocSignatureSpan">(cwd, relative)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.start_command.resolvePath">
+            function <span class="apidocSignatureSpan">strong-supervisor.start_command.</span>resolvePath
+            <span class="apidocSignatureSpan">(cwd, script)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.tracer">module strong-supervisor.tracer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.tracer.tracer">
+            function <span class="apidocSignatureSpan">strong-supervisor.</span>tracer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.tracer.start">
+            function <span class="apidocSignatureSpan">strong-supervisor.tracer.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-supervisor.watcher">module strong-supervisor.watcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-supervisor.watcher.start">
+            function <span class="apidocSignatureSpan">strong-supervisor.watcher.</span>start
+            <span class="apidocSignatureSpan">(parentCtl, cluster, clusterControl, config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-supervisor.watcher.</span>_watchers</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor" id="apidoc.module.strong-supervisor">module strong-supervisor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.agent" id="apidoc.element.strong-supervisor.agent">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>agent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function agent() {
+  // XXX sl-run.js sets the agent logger, and the quiet option, that won't
+  // happen if strongops isn't being used, unless we figure out a way to do it
+  // here.
+  var adapter = require('./adapter');
+
+  return adapter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.chdir" id="apidoc.element.strong-supervisor.chdir">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>chdir
+        <span class="apidocSignatureSpan">(directory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function chdir(directory) {
+  var pwd = path.resolve(process.env.PWD, directory);
+  process.chdir(pwd);
+  // Note that we only set PWD if chdir was successful.
+  process.env.PWD = pwd;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+} else if (process.cwd() !== fs.realpathSync(process.env.PWD)) {
+  // PWD was set, but its not a logical equivalent of our CWD. Reset PWD.
+  process.env.PWD = process.cwd();
+}
+
+module.exports = function chdir(directory) {
+  var pwd = path.resolve(process.env.PWD, directory);
+  process.<span class="apidocCodeKeywordSpan">chdir</span>(pwd);
+  // Note that we only set PWD if chdir was successful.
+  process.env.PWD = pwd;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.dashboard" id="apidoc.element.strong-supervisor.dashboard">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>dashboard
+        <span class="apidocSignatureSpan">(uri, appmetrics, dashboard)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dashboard(uri, appmetrics, dashboard) {
+  var options = {
+    appmetrics: appmetrics,
+    users: {},
+  };
+  util._extend(options, parse(uri));
+
+  if (!options.path)
+    return {};
+
+  // appmetrics-dash calls the path 'url' XXX(sam) maybe it should not?
+  options.url = options.path;
+
+  options.docs = process.env.STRONGLOOP_DASHBOARD_DOCS;
+  options.title = process.env.STRONGLOOP_DASHBOARD_TITLE;
+
+  dashboard.attach(options);
+
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.debug" id="apidoc.element.strong-supervisor.debug">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>debug
+        <span class="apidocSignatureSpan">(tag)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function (tag) {
+  var fn = debug(name + ':' + tag);
+  fn.json = json;
+  return fn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.logger" id="apidoc.element.strong-supervisor.logger">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>logger
+        <span class="apidocSignatureSpan">(sink)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Logger(sink) {
+  if (!(this instanceof Logger)) return new Logger(sink);
+
+  this.sink = sink;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.metrics" id="apidoc.element.strong-supervisor.metrics">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>metrics
+        <span class="apidocSignatureSpan">(parentCtl, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sendMetrics(parentCtl, callback) {
+  callback = callback || function() {};
+
+  // Scenarios:
+  //   no STRONGLOOP_METRICS, return
+  //
+  //   called from master:
+  //     needs to .start() with expanded scope
+  //       if invalid, warn, and clear env... so children don't warn
+  //     needs to wait for start
+  //     needs to reset STRONGLOOP_METRICS *before* starting cluster
+  //       statsd://:PORT/SCOPE-TEMPLATE
+  //
+  //
+  //   called from worker:
+  //     needs to .start() with expanded scope (will always be a statsd: URL)
+  //
+  //   called from single-instance:
+  //     needs to .start() with expanded scope (can reset env, its ok)
+
+  var self = this;
+  var endpoints = parse(process.env.STRONGLOOP_METRICS);
+
+  function parse(url) {
+    if (url == null)
+      return [];
+    try {
+      return JSON.parse(url);
+    } catch (er) {
+      return [url];
+    }
+  }
+
+  if (cluster.isMaster) {
+    endpoints.push('internal:');
+  }
+
+  if (!endpoints.length) {
+    process.nextTick(callback);
+    return false;
+  }
+
+  var server = Statsd({
+    scope: '%a.%h.%w',
+    expandScope: expandScope,
+    flushInterval: process.env.STRONGLOOP_FLUSH_INTERVAL,
+    syslog: syslog,
+  });
+
+  debug('metrics endpoints: %j', endpoints);
+
+  endpoints.forEach(function(endpoint) {
+    try {
+      server.backend(endpoint);
+      if (cluster.isMaster) {
+        self.logger.info('supervisor reporting metrics to `%s`', endpoint);
+      }
+    } catch (er) {
+      console.error('Invalid metrics endpoint `%s`: %s', endpoint, er.message);
+      process.exit(1);
+    }
+  });
+
+  // Internal metrics support, forwarded over node ipc from cluster master
+  // to parent.
+  if (parentCtl) {
+    server.on('metrics', forwardMetrics);
+  }
+
+  server.start(function(er) {
+    assert.ifError(er);
+
+    process.env.STRONGLOOP_METRICS = server.url;
+    agent().use(function(name, value) {
+      server.send(name, value);
+    });
+    return callback(server);
+  });
+
+  if (this.setupChildLogger &amp;&amp; server.child) {
+    var statsdWorker = {
+      process: {
+        stdout: server.child.stdout,
+        stderr: server.child.stderr,
+        pid: process.pid,
+      },
+      id: 'statsd',
+    };
+    this.setupChildLogger(statsdWorker);
+  }
+
+  function expandScope(scope) {
+    return expandString(scope, {
+      id: (cluster.worker &amp;&amp; cluster.worker.id) | 0,
+      pid: process.pid,
+      hostname: app.host(),
+      appName: app.name(),
+    });
+  }
+
+  function forwardMetrics(metrics) {
+    debug('received: %j', metrics);
+    parentCtl.notify({cmd: 'metrics', metrics: injectIdentifiers(metrics)});
+  }
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.pidfile" id="apidoc.element.strong-supervisor.pidfile">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>pidfile
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create(file) {
+  if (isStale(file)) {
+    unlink(file);
+  }
+  write(file, process.pid);
+
+  process.on('exit', unlink.bind(null, file));
+
+  // We don't unlink on SIGINT or SIGTERM, because those could be handled and
+  // recovered from, 'exit' is absolutely final.
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.printf_replacer" id="apidoc.element.strong-supervisor.printf_replacer">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>printf_replacer
+        <span class="apidocSignatureSpan">(template, replacements)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function printfReplacer(template, replacements) {
+  if (!(replacements instanceof Object)) {
+    return template;
+  }
+
+  return template.replace(/%[^%]/mg, function(match, offset, string) {
+    var char = match[1];
+    var escaped = offset &gt; 0 &amp;&amp; string[offset - 1] === '%';
+    if (!escaped &amp;&amp; char in replacements) {
+      match = replacements[char];
+    }
+    return match;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.start_command" id="apidoc.element.strong-supervisor.start_command">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>start_command
+        <span class="apidocSignatureSpan">(pwd, argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveArgs(pwd, argv) {
+  var replacer = symlinkReplacer(pwd);
+  var cwd = fs.realpathSync(pwd);
+  var script = argv[2] || '.';
+  debug('resolving CWD: %j, path: %j', cwd, script);
+  var app = resolvePath(cwd, script);
+  var stat = app.stat;
+  if (app.error) {
+    return app;
+  }
+
+  if (stat.isFile()) {
+    // given path was either foo/app.js that exists or foo/app that doesn't
+    // exist but which node would treat ass foo/app.js, so we'll just find the
+    // the package's root directory and use that as the CWD when running the
+    // specified script.
+    return replacer(resolvePackageFromPath(app.cwd, app.path));
+  }
+
+  if (stat.isDirectory()) {
+    // The given path is a directory, so now we want to find the nearest
+    // package.json, use it as the CWD, and then perform an `npm start` like
+    // script resolution.
+    var absolutePath = path.resolve(app.cwd, app.path);
+    var pkgApp = resolvePackageFromPath(absolutePath);
+
+    // 1. try parsing scripts.start from the package.json
+    var pkgStart = resolvePackageStart(pkgApp.cwd);
+    if (!pkgStart.error) {
+      return replacer(pkgStart);
+    }
+
+    // 2. try server.js, app.js, index.js**, then default module resolution
+    // ** We explicitly check for index.js even though it will be checked by
+    //    the node module resolver because we prefer it over the package's main
+    //    in cases where they are different.
+    pkgApp.path = ifExists(pkgApp.cwd, 'server.js') ||
+                  ifExists(pkgApp.cwd, 'app.js') ||
+                  ifExists(pkgApp.cwd, 'index.js') ||
+                  requireable(pkgApp.cwd, pkgApp.path);
+    if (pkgApp.path) {
+      return replacer(pkgApp);
+    }
+  }
+
+  // The package.json doesn't say how to run it, and node can't decide.. time
+  // to error out and let the user know they need to be more specific.
+  return {error: Error('app is not a file or a directory ')};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.tracer" id="apidoc.element.strong-supervisor.tracer">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>tracer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tracer() {
+  return TRACER;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.adapter" id="apidoc.module.strong-supervisor.adapter">module strong-supervisor.adapter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.adapter.lrtime" id="apidoc.element.strong-supervisor.adapter.lrtime">
+        function <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>lrtime
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lrtime() {
+  start();
+  return appmetrics.lrtime();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // Update other values accordingly
+  metrics.runningTotal += value;
+  metrics.count++;
+}
+
+function lrtime() {
+  start();
+  return appmetrics.<span class="apidocCodeKeywordSpan">lrtime</span>();
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.adapter.profile" id="apidoc.element.strong-supervisor.adapter.profile">
+        function <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>profile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function profile() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.adapter.start" id="apidoc.element.strong-supervisor.adapter.start">
+        function <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>start
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function start(options) {
+  options = util._extend({}, options);
+
+  if (!appmetricsStarted) {
+    appmetrics = require('appmetrics');
+    appmetrics.configure(options); // FIXME are the options in agentOptions OK?
+    // FIXME confirm appmetrics.configure() accepts sl-run:agentOptions
+    appmetrics.enable('eventloop');
+    monitor = appmetrics.monitor();
+    initialise();
+    appmetricsStarted = true;
+
+    global.APPMETRICS = appmetrics;
+
+    var dash = dashboard(options.dashboard, appmetrics,
+                         require('appmetrics-dash'));
+
+    if (dash.path)
+      console.log('strong-supervisor attaching dashboard at %s', dash.path);
+
+    // XXX(sam) Unimplemented features?
+    // - watchdogActivationCount
+    // - express:usage-record
+
+    exports.on('newListener', function(type) {
+      switch (type) {
+        case 'express:usage-record':
+          // turn on express usage record
+          monitor.on('express:usage-record', function(record) {
+            exports.emit('express:usage-record', record);
+          });
+          break;
+      }
+    });
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var logger = new Logger(process.stderr);
+
+// Attach targeted control listener to cluster, for both master and workers.
+require('./targetctl');
+
+// Wrap watcher start, for use in master and workers.
+function watcherStart(parentCtl) {
+watcher.<span class="apidocCodeKeywordSpan">start</span>(parentCtl, cluster, control, module.exports);
+}
+
+if (cluster.isWorker) {
+module.exports = {
+  isWorker: true,
+  isMaster: false,
+  logger: logger,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.adapter.use" id="apidoc.element.strong-supervisor.adapter.use">
+        function <span class="apidocSignatureSpan">strong-supervisor.adapter.</span>use
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function use(callback) {
+
+  // The callback needs to fire every 60 seconds with data from the last 60
+  // seconds
+  setInterval(function() {
+    // Get data from last 60 seconds
+    var eventLoopData = getEventLoopData();
+    var cpuData = getCpuData();
+    var httpData = getHttpData();
+    var heapData = getHeapData();
+    var usedHeap = getGcHeapData();
+    var messageData = getMessageData();
+
+    debug('eventLoopData: %j', eventLoopData);
+
+    if (eventLoopData.count &gt; 0) {
+      // This function can run before data collection has started, in which case
+      // there is no data, and min/max/average are undefined. Skip reporting
+      // until data arrives.
+      callback('loop.count', assertPositive(eventLoopData.count));
+      callback('loop.minimum', assertPositive(eventLoopData.minimum));
+      callback('loop.maximum', assertPositive(eventLoopData.maximum));
+      callback('loop.average', assertPositive(eventLoopData.average));
+    }
+
+    debug('cpuData: %j', cpuData);
+
+    if (cpuData.count) {
+      // This function can run before any CPU data has been collected. Avoid
+      // reporting unknown or invalid values by just not reporting if there
+      // is no data.
+      callback('cpu.system', assertPositive(cpuData.system));
+      callback('cpu.total', assertPositive(cpuData.total));
+      callback('cpu.user', assertPositive(cpuData.user));
+    }
+
+    callback('http.connection.count', assertPositive(httpData.count));
+
+    // Callback with probe data of each probe if there have been events
+    var probeData;
+
+    for (var i in probeList) {
+      if (probeMetrics[probeList[i]]) {
+        probeData = getProbeData(probeList[i]);
+        callback(probeList[i] + '.count', assertPositive(probeData.count));
+        callback(probeList[i] + '.average', assertPositive(probeData.average));
+        callback(probeList[i] + '.minimum', assertPositive(probeData.minimum));
+        callback(probeList[i] + '.maximum', assertPositive(probeData.maximum));
+      }
+    }
+
+    if (usedHeap &gt; 0) {
+      callback('gc.heap.used', usedHeap);
+    }
+
+    if (heapData.total &amp;&amp; heapData.used) {
+      callback('heap.total', assertPositive(heapData.total));
+      callback('heap.used', assertPositive(heapData.used));
+    }
+
+    if (messageData.sent &gt; 0 || messageData.received &gt; 0) {
+      callback('messages.out.count', messageData.sent);
+      callback('messages.in.count', messageData.received);
+    }
+
+  }, callbackInterval).unref();
+
+  setInterval(function() {
+    var version = process.version.split('v')[1];
+    if (objectTrackingEnabled) {
+      if (version &gt;= '0.11') {
+        var histogram = appmetrics.getObjectHistogram();
+        require('fs').writeFileSync('histogram-' + Date.now() + '.json',
+                                    JSON.stringify(histogram));
+        var objectCounts = compareHistograms(lastObjectHistogram, histogram);
+        lastObjectHistogram = histogram;
+        // Get object stats
+        for (var type in objectCounts) {
+          var tuple = objectCounts[type];
+          // Don't output events for no change?
+          // XXX(toby) - What's the correct behaviour here?
+          // XXX(toby) - Should we skip "weird" object types?
+          // FIXME(toby) I'll have to read the strong-agent code to see how what
+          // you are doing is different, but if you look at histogram.json I
+          // checked in, you'll see many of the types are pure garbage. I wonder
+          // if non-string things like functions are being coerced into strings?
+          // The entire source code of files is showing up as 'types'!
+          if (type.indexOf('\n') &gt;= 0) {
+            console.trace('%j', type);
+            console.assert(type.indexOf('\n') &lt; 0, 'INVALID');
+          } else {
+            if (tuple.count !== 0 &amp;&amp; tuple.size !== 0) {
+              callback('object.' + type + '.count', tuple.count);
+              callback('object.' + type + '.size', tuple.size);
+            }
+          }
+        }
+      } else {
+        callback('Warning',
+                 'Object tracking is not supported on node v' + version);
+      }
+    } ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  server.on('metrics', forwardMetrics);
+}
+
+server.start(function(er) {
+  assert.ifError(er);
+
+  process.env.STRONGLOOP_METRICS = server.url;
+  agent().<span class="apidocCodeKeywordSpan">use</span>(function(name, value) {
+    server.send(name, value);
+  });
+  return callback(server);
+});
+
+if (this.setupChildLogger &amp;&amp; server.child) {
+  var statsdWorker = {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.agent" id="apidoc.module.strong-supervisor.agent">module strong-supervisor.agent</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.agent.agent" id="apidoc.element.strong-supervisor.agent.agent">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>agent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function agent() {
+  // XXX sl-run.js sets the agent logger, and the quiet option, that won't
+  // happen if strongops isn't being used, unless we figure out a way to do it
+  // here.
+  var adapter = require('./adapter');
+
+  return adapter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.app" id="apidoc.module.strong-supervisor.app">module strong-supervisor.app</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.app.host" id="apidoc.element.strong-supervisor.app.host">
+        function <span class="apidocSignatureSpan">strong-supervisor.app.</span>host
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function host() {
+  var host = os.hostname();
+  // XXX strip domain from host for uniformity?
+  return host;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.setupChildLogger(statsdWorker);
+}
+
+function expandScope(scope) {
+  return expandString(scope, {
+    id: (cluster.worker &amp;&amp; cluster.worker.id) | 0,
+    pid: process.pid,
+    hostname: app.<span class="apidocCodeKeywordSpan">host</span>(),
+    appName: app.name(),
+  });
+}
+
+function forwardMetrics(metrics) {
+  debug('received: %j', metrics);
+  parentCtl.notify({cmd: 'metrics', metrics: injectIdentifiers(metrics)});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.app.name" id="apidoc.element.strong-supervisor.app.name">
+        function <span class="apidocSignatureSpan">strong-supervisor.app.</span>name
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function name() {
+  try {
+    return require(path.resolve('package.json')).name;
+  } catch (e) {
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+function expandScope(scope) {
+  return expandString(scope, {
+    id: (cluster.worker &amp;&amp; cluster.worker.id) | 0,
+    pid: process.pid,
+    hostname: app.host(),
+    appName: app.<span class="apidocCodeKeywordSpan">name</span>(),
+  });
+}
+
+function forwardMetrics(metrics) {
+  debug('received: %j', metrics);
+  parentCtl.notify({cmd: 'metrics', metrics: injectIdentifiers(metrics)});
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.capabilities" id="apidoc.module.strong-supervisor.capabilities">module strong-supervisor.capabilities</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.capabilities.list" id="apidoc.element.strong-supervisor.capabilities.list">
+        function <span class="apidocSignatureSpan">strong-supervisor.capabilities.</span>list
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listCapabilities() {
+  return Object.keys(capabilities);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function queryCapabilities(req, rsp, callback) {
+var features = req.feature;
+var support = rsp.capabilities = {};
+
+if (typeof features === 'string') {
+  features = features.split(',');
+} else {
+  features = capabilities.<span class="apidocCodeKeywordSpan">list</span>();
+}
+
+async.map(features, function(feature, callback) {
+  capabilities.query(feature, function(status, reasons) {
+    support[feature] = {
+      status: status,
+      reasons: reasons
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.capabilities.query" id="apidoc.element.strong-supervisor.capabilities.query">
+        function <span class="apidocSignatureSpan">strong-supervisor.capabilities.</span>query
+        <span class="apidocSignatureSpan">(featureName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function queryCapabilities(featureName, callback) {
+  var feature = capabilities[featureName];
+
+  if (feature == null) {
+    callback(false, ['Unknown capability.']);
+    return;
+  }
+
+  var status = true;
+
+  async.map(feature.checks, function(check, callback) {
+    check.check(function(result, reason) {
+      status = status &amp;&amp; result;
+      callback(null, reason);
+    });
+  }, function(err, reasons) {
+    if (err) {
+      callback(false, ['Could not verify support.']);
+      return;
+    }
+
+    callback(status, _.compact(reasons));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (typeof features === 'string') {
+features = features.split(',');
+  } else {
+features = capabilities.list();
+  }
+
+  async.map(features, function(feature, callback) {
+capabilities.<span class="apidocCodeKeywordSpan">query</span>(feature, function(status, reasons) {
+  support[feature] = {
+    status: status,
+    reasons: reasons
+  };
+
+  callback(null, support[feature]);
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.chdir" id="apidoc.module.strong-supervisor.chdir">module strong-supervisor.chdir</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.chdir.chdir" id="apidoc.element.strong-supervisor.chdir.chdir">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>chdir
+        <span class="apidocSignatureSpan">(directory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function chdir(directory) {
+  var pwd = path.resolve(process.env.PWD, directory);
+  process.chdir(pwd);
+  // Note that we only set PWD if chdir was successful.
+  process.env.PWD = pwd;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+} else if (process.cwd() !== fs.realpathSync(process.env.PWD)) {
+  // PWD was set, but its not a logical equivalent of our CWD. Reset PWD.
+  process.env.PWD = process.cwd();
+}
+
+module.exports = function chdir(directory) {
+  var pwd = path.resolve(process.env.PWD, directory);
+  process.<span class="apidocCodeKeywordSpan">chdir</span>(pwd);
+  // Note that we only set PWD if chdir was successful.
+  process.env.PWD = pwd;
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.config" id="apidoc.module.strong-supervisor.config">module strong-supervisor.config</a></h1>
+
+
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.config.sendMetrics" id="apidoc.element.strong-supervisor.config.sendMetrics">
+        function <span class="apidocSignatureSpan">strong-supervisor.config.</span>sendMetrics
+        <span class="apidocSignatureSpan">(parentCtl, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sendMetrics(parentCtl, callback) {
+  callback = callback || function() {};
+
+  // Scenarios:
+  //   no STRONGLOOP_METRICS, return
+  //
+  //   called from master:
+  //     needs to .start() with expanded scope
+  //       if invalid, warn, and clear env... so children don't warn
+  //     needs to wait for start
+  //     needs to reset STRONGLOOP_METRICS *before* starting cluster
+  //       statsd://:PORT/SCOPE-TEMPLATE
+  //
+  //
+  //   called from worker:
+  //     needs to .start() with expanded scope (will always be a statsd: URL)
+  //
+  //   called from single-instance:
+  //     needs to .start() with expanded scope (can reset env, its ok)
+
+  var self = this;
+  var endpoints = parse(process.env.STRONGLOOP_METRICS);
+
+  function parse(url) {
+    if (url == null)
+      return [];
+    try {
+      return JSON.parse(url);
+    } catch (er) {
+      return [url];
+    }
+  }
+
+  if (cluster.isMaster) {
+    endpoints.push('internal:');
+  }
+
+  if (!endpoints.length) {
+    process.nextTick(callback);
+    return false;
+  }
+
+  var server = Statsd({
+    scope: '%a.%h.%w',
+    expandScope: expandScope,
+    flushInterval: process.env.STRONGLOOP_FLUSH_INTERVAL,
+    syslog: syslog,
+  });
+
+  debug('metrics endpoints: %j', endpoints);
+
+  endpoints.forEach(function(endpoint) {
+    try {
+      server.backend(endpoint);
+      if (cluster.isMaster) {
+        self.logger.info('supervisor reporting metrics to `%s`', endpoint);
+      }
+    } catch (er) {
+      console.error('Invalid metrics endpoint `%s`: %s', endpoint, er.message);
+      process.exit(1);
+    }
+  });
+
+  // Internal metrics support, forwarded over node ipc from cluster master
+  // to parent.
+  if (parentCtl) {
+    server.on('metrics', forwardMetrics);
+  }
+
+  server.start(function(er) {
+    assert.ifError(er);
+
+    process.env.STRONGLOOP_METRICS = server.url;
+    agent().use(function(name, value) {
+      server.send(name, value);
+    });
+    return callback(server);
+  });
+
+  if (this.setupChildLogger &amp;&amp; server.child) {
+    var statsdWorker = {
+      process: {
+        stdout: server.child.stdout,
+        stderr: server.child.stderr,
+        pid: process.pid,
+      },
+      id: 'statsd',
+    };
+    this.setupChildLogger(statsdWorker);
+  }
+
+  function expandScope(scope) {
+    return expandString(scope, {
+      id: (cluster.worker &amp;&amp; cluster.worker.id) | 0,
+      pid: process.pid,
+      hostname: app.host(),
+      appName: app.name(),
+    });
+  }
+
+  function forwardMetrics(metrics) {
+    debug('received: %j', metrics);
+    parentCtl.notify({cmd: 'metrics', metrics: injectIdentifiers(metrics)});
+  }
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        cluster.workers[id].logFile.reOpen();
+      }
+    }
+    logger.info('log files reopened');
+  });
+}
+
+this.<span class="apidocCodeKeywordSpan">sendMetrics</span>(runctl.parentCtl, function() {
+  // Wait until metrics has started before starting cluster control, because
+  // the workers need to know what ephemeral port the statsd server is
+  // listening on in order to send it metrics.
+  // XXX(sam) above should no longer be true, since we use node ipc to
+  // send metrics, not an ephemeral port. side effect of the delay is
+  // that the first 'status' notification occurs before control is started,
+  // so the setSize part of strong-cluster-control.status() is not yet set.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.config.start" id="apidoc.element.strong-supervisor.config.start">
+        function <span class="apidocSignatureSpan">strong-supervisor.config.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function start() {
+  config.setupChildLogger = setupChildLogger;
+
+  cluster.on('fork', setupChildLogger);
+
+  logger.info('supervisor starting (pid %d)', process.pid);
+
+  if (options.pid) {
+    try {
+      pidfile.create(options.pid);
+    } catch (er) {
+      console.error('supervisor failed to create pid file: %s', er.message);
+      process.exit(1);
+    }
+  }
+
+  // Re-require this so that strong-agent (which may be required by now)
+  // notices, and attaches cluster control instrumentation.
+  require('strong-cluster-control');
+
+  control.on('start', function() {
+    runctl.notifyStarted();
+
+    if (!options.channel) return;
+
+    logger.info('supervisor listening on \'%s\'', options.channel);
+
+    runctl.start({
+      channel: options.channel,
+      logger: logger,
+    });
+  });
+  control.on('setSize', function() {
+    logger.info('supervisor size set to', this.options.size);
+  });
+  control.on('resize', function() {
+    logger.info('supervisor resized to', this.options.size);
+  });
+  control.on('startWorker', function(w) {
+    logger.info('supervisor started worker %d (pid %d)', w.id, w.process.pid);
+  });
+  control.on('stopWorker', function(w) {
+    logger.info('supervisor stopped worker %d (pid %d)', w.id, w.process.pid);
+  });
+  control.on('stop', function() {
+    logger.info('supervisor stopped');
+    process.exit(); // XXX should not be necessary!
+  });
+  cluster.on('exit', function(worker, code, signal) {
+    var exit = worker.suicide ? 'expected' : 'accidental';
+    logger.error('supervisor worker id %s (pid %d) %s exit with %s',
+                  worker.id, worker.process.pid, exit, signal || code
+                 );
+  });
+
+  var lastSignal = null;
+  process.on('exit', function(code) {
+    if (code === 0 &amp;&amp; lastSignal) {
+      process.kill(process.pid, lastSignal);
+      return;
+    }
+    logger.error('supervisor exiting with code %d', code);
+  });
+
+  process.once('SIGINT', function() {
+    logger.warn('received SIGINT, shutting down');
+    lastSignal = 'SIGINT';
+    control.stop();
+  });
+  process.once('SIGTERM', function() {
+    logger.warn('received SIGTERM, shutting down');
+    lastSignal = 'SIGTERM';
+    control.stop();
+  });
+  process.on('SIGHUP', function() {
+    logger.warn('received SIGHUP, restarting workers');
+    try {
+      chdir(process.env.PWD);
+    } catch (er) {
+      logger.error('failed to chdir to \'%s\': %s', process.env.PWD, er);
+    }
+    control.restart();
+  });
+
+  if (supervisorLog !== process.stdout) {
+    process.on('SIGUSR2', function() {
+      logger.warn('received SIGUSR2, re-opening log files');
+      supervisorLog.reOpen();
+      for (var id in cluster.workers) {
+        if (cluster.workers[id].logFile !== supervisorLog) {
+          cluster.workers[id].logFile.reOpen();
+        }
+      }
+      logger.info('log files reopened');
+    });
+  }
+
+  this.sendMetrics(runctl.parentCtl, function() {
+    // Wait until metrics has started before starting cluster control, because
+    // the workers need to know what ephemeral port the statsd server is
+    // listening on in order to send it metrics.
+    // XXX(sam) above should no longer be true, since we use node ipc to
+    // send metrics, not an ephemeral port. side effect of the delay is
+    // that the first 'status' notification occurs before control is started,
+    // so the setSize part of strong-cluster-control.status() is not yet set.
+    debug('cluster-control size: %j', config.size);
+    if (config.size &lt; 0) {
+      // Fork this number of workers... but don't restart them. Mostly used
+      // as `-1` by arc.
+      for (var size = 0; size &gt; config.size; size--) {
+        cluster.fork();
+      }
+      delete config.size;
+    }
+    control.start({size: config.size});
+  });
+
+  this.watcher(runctl.parentCtl);
+
+  function setupChildLogger(worker) {
+    var tag = {pid: worker.process.pid, worker: worker.id};
+    var logStream = isPerWorker
+                  ? new LogWriter(worker, options)  // cleaned up by pipe()
+                  : supervisorLog;                  // cleaned up by exit()
+    var outLog = transformer({
+      timeStamp: o ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var logger = new Logger(process.stderr);
+
+// Attach targeted control listener to cluster, for both master and workers.
+require('./targetctl');
+
+// Wrap watcher start, for use in master and workers.
+function watcherStart(parentCtl) {
+watcher.<span class="apidocCodeKeywordSpan">start</span>(parentCtl, cluster, control, module.exports);
+}
+
+if (cluster.isWorker) {
+module.exports = {
+  isWorker: true,
+  isMaster: false,
+  logger: logger,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.config.watcher" id="apidoc.element.strong-supervisor.config.watcher">
+        function <span class="apidocSignatureSpan">strong-supervisor.config.</span>watcher
+        <span class="apidocSignatureSpan">(parentCtl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function watcherStart(parentCtl) {
+  watcher.start(parentCtl, cluster, control, module.exports);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      cluster.fork();
+    }
+    delete config.size;
+  }
+  control.start({size: config.size});
+});
+
+this.<span class="apidocCodeKeywordSpan">watcher</span>(runctl.parentCtl);
+
+function setupChildLogger(worker) {
+  var tag = {pid: worker.process.pid, worker: worker.id};
+  var logStream = isPerWorker
+                ? new LogWriter(worker, options)  // cleaned up by pipe()
+                : supervisorLog;                  // cleaned up by exit()
+  var outLog = transformer({
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.dashboard" id="apidoc.module.strong-supervisor.dashboard">module strong-supervisor.dashboard</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.dashboard.dashboard" id="apidoc.element.strong-supervisor.dashboard.dashboard">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>dashboard
+        <span class="apidocSignatureSpan">(uri, appmetrics, dashboard)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dashboard(uri, appmetrics, dashboard) {
+  var options = {
+    appmetrics: appmetrics,
+    users: {},
+  };
+  util._extend(options, parse(uri));
+
+  if (!options.path)
+    return {};
+
+  // appmetrics-dash calls the path 'url' XXX(sam) maybe it should not?
+  options.url = options.path;
+
+  options.docs = process.env.STRONGLOOP_DASHBOARD_DOCS;
+  options.title = process.env.STRONGLOOP_DASHBOARD_TITLE;
+
+  dashboard.attach(options);
+
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.dashboard._parse" id="apidoc.element.strong-supervisor.dashboard._parse">
+        function <span class="apidocSignatureSpan">strong-supervisor.dashboard.</span>_parse
+        <span class="apidocSignatureSpan">(uri)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(uri) {
+  var options = {};
+
+  if (!uri)
+    return options;
+
+  if (uri === '')
+    return options;
+
+  if (uri === 'off')
+    return options;
+
+  if (uri === 'on') {
+    options.path = '/appmetrics-dash';
+    return options;
+  }
+
+  uri = url.parse(uri);
+  if (uri.pathname === '/')
+    delete uri.pathname;
+
+  options.path = uri.pathname || '/appmetrics-dash';
+
+  assign('host', 'hostname');
+  assign('port', 'port');
+
+  function assign(to, from) {
+    if (uri[from] != null &amp;&amp; uri[from] !== '') {
+      options[to] = uri[from];
+    }
+  }
+
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.debug" id="apidoc.module.strong-supervisor.debug">module strong-supervisor.debug</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.debug.debug" id="apidoc.element.strong-supervisor.debug.debug">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>debug
+        <span class="apidocSignatureSpan">(tag)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function (tag) {
+  var fn = debug(name + ':' + tag);
+  fn.json = json;
+  return fn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.errors" id="apidoc.module.strong-supervisor.errors">module strong-supervisor.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.errors.ExitError" id="apidoc.element.strong-supervisor.errors.ExitError">
+        function <span class="apidocSignatureSpan">strong-supervisor.errors.</span>ExitError
+        <span class="apidocSignatureSpan">(message, code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ExitError(message, code) {
+  var self = new Error(message);
+  self.code = code == null ? 1 : code;
+  self.name = 'ExitError';
+  return self;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.expander" id="apidoc.module.strong-supervisor.expander">module strong-supervisor.expander</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.expander.expand" id="apidoc.element.strong-supervisor.expander.expand">
+        function <span class="apidocSignatureSpan">strong-supervisor.expander.</span>expand
+        <span class="apidocSignatureSpan">(str, worker)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">expand = function (str, worker) {
+  return printfReplacer(str || '', workerParams(worker));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.logger" id="apidoc.module.strong-supervisor.logger">module strong-supervisor.logger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.logger.logger" id="apidoc.element.strong-supervisor.logger.logger">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>logger
+        <span class="apidocSignatureSpan">(sink)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Logger(sink) {
+  if (!(this instanceof Logger)) return new Logger(sink);
+
+  this.sink = sink;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.logger.prototype" id="apidoc.module.strong-supervisor.logger.prototype">module strong-supervisor.logger.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.logger.prototype.error" id="apidoc.element.strong-supervisor.logger.prototype.error">
+        function <span class="apidocSignatureSpan">strong-supervisor.logger.prototype.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function () {
+  var args = firstArgs.concat([].slice.call(arguments));
+  return fn.apply(this, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+'use strict';
+
+// May set options in process.env, so run first.
+try {
+  var options = require('./options').parse(process.argv);
+} catch (er) {
+  if (er.code != null) {
+    console.<span class="apidocCodeKeywordSpan">error</span>('%s', er.message);
+    return process.exit(er.code);
+  }
+  console.error(er.stack);
+  return process.exit(1);
+}
+
+var Logger = require('./logger');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.logger.prototype.info" id="apidoc.element.strong-supervisor.logger.prototype.info">
+        function <span class="apidocSignatureSpan">strong-supervisor.logger.prototype.</span>info
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function () {
+  var args = firstArgs.concat([].slice.call(arguments));
+  return fn.apply(this, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+logger.sink.pipe(supervisorLog);
+
+config.start = function start() {
+config.setupChildLogger = setupChildLogger;
+
+cluster.on('fork', setupChildLogger);
+
+logger.<span class="apidocCodeKeywordSpan">info</span>('supervisor starting (pid %d)', process.pid);
+
+if (options.pid) {
+  try {
+    pidfile.create(options.pid);
+  } catch (er) {
+    console.error('supervisor failed to create pid file: %s', er.message);
+    process.exit(1);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.logger.prototype.log" id="apidoc.element.strong-supervisor.logger.prototype.log">
+        function <span class="apidocSignatureSpan">strong-supervisor.logger.prototype.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {
+  var args = firstArgs.concat([].slice.call(arguments));
+  return fn.apply(this, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+global.APPMETRICS = appmetrics;
+
+var dash = dashboard(options.dashboard, appmetrics,
+                     require('appmetrics-dash'));
+
+if (dash.path)
+  console.<span class="apidocCodeKeywordSpan">log</span>('strong-supervisor attaching dashboard at %s', dash.path);
+
+// XXX(sam) Unimplemented features?
+// - watchdogActivationCount
+// - express:usage-record
+
+exports.on('newListener', function(type) {
+  switch (type) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.logger.prototype.warn" id="apidoc.element.strong-supervisor.logger.prototype.warn">
+        function <span class="apidocSignatureSpan">strong-supervisor.logger.prototype.</span>warn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function () {
+  var args = firstArgs.concat([].slice.call(arguments));
+  return fn.apply(this, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    process.kill(process.pid, lastSignal);
+    return;
+  }
+  logger.error('supervisor exiting with code %d', code);
+});
+
+process.once('SIGINT', function() {
+  logger.<span class="apidocCodeKeywordSpan">warn</span>('received SIGINT, shutting down');
+  lastSignal = 'SIGINT';
+  control.stop();
+});
+process.once('SIGTERM', function() {
+  logger.warn('received SIGTERM, shutting down');
+  lastSignal = 'SIGTERM';
+  control.stop();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.metrics" id="apidoc.module.strong-supervisor.metrics">module strong-supervisor.metrics</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.metrics.metrics" id="apidoc.element.strong-supervisor.metrics.metrics">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>metrics
+        <span class="apidocSignatureSpan">(parentCtl, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sendMetrics(parentCtl, callback) {
+  callback = callback || function() {};
+
+  // Scenarios:
+  //   no STRONGLOOP_METRICS, return
+  //
+  //   called from master:
+  //     needs to .start() with expanded scope
+  //       if invalid, warn, and clear env... so children don't warn
+  //     needs to wait for start
+  //     needs to reset STRONGLOOP_METRICS *before* starting cluster
+  //       statsd://:PORT/SCOPE-TEMPLATE
+  //
+  //
+  //   called from worker:
+  //     needs to .start() with expanded scope (will always be a statsd: URL)
+  //
+  //   called from single-instance:
+  //     needs to .start() with expanded scope (can reset env, its ok)
+
+  var self = this;
+  var endpoints = parse(process.env.STRONGLOOP_METRICS);
+
+  function parse(url) {
+    if (url == null)
+      return [];
+    try {
+      return JSON.parse(url);
+    } catch (er) {
+      return [url];
+    }
+  }
+
+  if (cluster.isMaster) {
+    endpoints.push('internal:');
+  }
+
+  if (!endpoints.length) {
+    process.nextTick(callback);
+    return false;
+  }
+
+  var server = Statsd({
+    scope: '%a.%h.%w',
+    expandScope: expandScope,
+    flushInterval: process.env.STRONGLOOP_FLUSH_INTERVAL,
+    syslog: syslog,
+  });
+
+  debug('metrics endpoints: %j', endpoints);
+
+  endpoints.forEach(function(endpoint) {
+    try {
+      server.backend(endpoint);
+      if (cluster.isMaster) {
+        self.logger.info('supervisor reporting metrics to `%s`', endpoint);
+      }
+    } catch (er) {
+      console.error('Invalid metrics endpoint `%s`: %s', endpoint, er.message);
+      process.exit(1);
+    }
+  });
+
+  // Internal metrics support, forwarded over node ipc from cluster master
+  // to parent.
+  if (parentCtl) {
+    server.on('metrics', forwardMetrics);
+  }
+
+  server.start(function(er) {
+    assert.ifError(er);
+
+    process.env.STRONGLOOP_METRICS = server.url;
+    agent().use(function(name, value) {
+      server.send(name, value);
+    });
+    return callback(server);
+  });
+
+  if (this.setupChildLogger &amp;&amp; server.child) {
+    var statsdWorker = {
+      process: {
+        stdout: server.child.stdout,
+        stderr: server.child.stderr,
+        pid: process.pid,
+      },
+      id: 'statsd',
+    };
+    this.setupChildLogger(statsdWorker);
+  }
+
+  function expandScope(scope) {
+    return expandString(scope, {
+      id: (cluster.worker &amp;&amp; cluster.worker.id) | 0,
+      pid: process.pid,
+      hostname: app.host(),
+      appName: app.name(),
+    });
+  }
+
+  function forwardMetrics(metrics) {
+    debug('received: %j', metrics);
+    parentCtl.notify({cmd: 'metrics', metrics: injectIdentifiers(metrics)});
+  }
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.options" id="apidoc.module.strong-supervisor.options">module strong-supervisor.options</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.options.parse" id="apidoc.element.strong-supervisor.options.parse">
+        function <span class="apidocSignatureSpan">strong-supervisor.options.</span>parse
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(argv) {
+  var options = {
+    NAME: exports.NAME,
+    HELP: exports.HELP,
+    argv: argv,         // process.argv stripped of command...
+    args: ['.'],        // app app-options...
+    enableTracing: false,
+    profile: true,
+    channel: process.env.STRONGLOOP_CONTROL || 'runctl',
+    log: false,
+    metrics: null,
+    timeStampWorkerLogs: true,
+    timeStampSupervisorLogs: true,
+    logDecoration: true,
+    syslog: false,
+  };
+  // cluster_size is for compatibility with strong-cluster-control@1.x
+  var cluster = process.env.STRONGLOOP_CLUSTER;
+  if (cluster == null || cluster === '') {
+    cluster = 'CPU';
+  }
+  for (var i = 2; i &lt; argv.length; i++) {
+    var option = argv[i];
+    if (option === '-h') {
+      options.help = true;
+
+    } else if (option === '--help') {
+      options.help = true;
+
+    } else if (option === '-v') {
+      options.version = true;
+
+    } else if (option === '--version') {
+      options.version = true;
+
+    } else if (option === '--log' || option === '-l') {
+      i++;
+      options.log = argv[i];
+
+    } else if (/^--log=/.test(option)) {
+      options.log = value(option, options.log);
+
+    } else if (option === '--syslog') {
+      options.syslog = syslogAvailable;
+
+    } else if (option === '--metrics' || option === '-m') {
+      i++;
+      options.metrics = options.metrics || [];
+      options.metrics.push(argv[i]);
+      options.profile = true;
+
+    } else if (/^--metrics=/.test(option)) {
+      options.metrics = options.metrics || [];
+      options.metrics.push(value(option));
+      options.profile = true;
+
+    } else if (option === '--pid' || option === '-p') {
+      i++;
+      options.pid = argv[i];
+
+    } else if (/^--pid=/.test(option)) {
+      options.pid = value(option, options.pid);
+
+    } else if (option === '--profile') {
+      options.profile = true;
+
+    } else if (option === '--no-profile') {
+      options.profile = false;
+      options.metrics = null;
+      delete process.env.STRONGLOOP_METRICS;
+
+    } else if (option === '--trace') {
+      options.enableTracing = true;
+
+    } else if (option === '--cluster') {
+      i++;
+      cluster = argv[i];
+
+    } else if (/^--cluster=/.test(option)) {
+      cluster = value(argv[i], cluster);
+
+    } else if (option === '--no-cluster') {
+      cluster = 'no';
+
+    // Only -C,--control,--no-control are documented, now, to align with
+    // strong-pm. The others are legacy, to be deleted sometime.
+    } else if (/^--(control|port|addr|path)$/.test(option)) {
+      i++;
+      options.channel = argv[i];
+
+    } else if (option === '-C') {
+      i++;
+      options.channel = argv[i];
+
+    } else if (/^--(control|port|addr|path)=/.test(option)) {
+      options.channel = value(option, options.channel);
+
+    } else if (option === '--no-control') {
+      options.channel = false;
+
+    } else if (option === '--no-channel') {
+      options.channel = false;
+
+    } else if (option === '--no-timestamp-workers') {
+      options.timeStampWorkerLogs = false;
+
+    } else if (option === '--no-timestamp-supervisor') {
+      options.timeStampSupervisorLogs = false;
+
+    } else if (option === '--no-log-decoration') {
+      options.logDecoration = false;
+
+    } else {
+      options.argv = argv.slice(0, i);
+      options.args = argv.slice(i);
+      break;
+    }
+  }
+
+  if (options.syslog) {
+    options.timeStampSupervisorLogs = false;
+    options.timeStampWorkerLogs = false;
+  }
+
+  if (options.metrics) {
+    options.metrics = JSON.stringify(options.metrics);
+  }
+
+  options.cluster = {
+    isWorker: false,
+    isMaster: true,
+  };
+
+  if (/cpu/i.test(cluster)) {
+    // --cluster=cpu, --cluster=CPUs
+    options.cluster.size = os.cpus().length;
+  } else if (/^-?[0-9]+$/.test(cluster)) {
+    // --cluster=[-]N, N is 0, 1, ...
+    options.cluster.size = +cluster;
+  } else {
+    throw new ExitError(fmt('Invalid cluster option: %s', cluster));
+  }
+  var protocol;
+  // The protocol includes the colon on parsing!
+  var protocolMap = {
+    'http:': 'http',
+    'https:': 'http',
+    'ws:': 'ws',
+    'wss:': 'wss',
+    // Default will be 'ws'
+  };
+  if (options. ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// changed for reasons of backwards compatibility.
+/*eslint camelcase:0*/
+
+'use strict';
+
+// May set options in process.env, so run first.
+try {
+var options = require('./options').<span class="apidocCodeKeywordSpan">parse</span>(process.argv);
+} catch (er) {
+if (er.code != null) {
+  console.error('%s', er.message);
+  return process.exit(er.code);
+}
+console.error(er.stack);
+return process.exit(1);
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.pidfile" id="apidoc.module.strong-supervisor.pidfile">module strong-supervisor.pidfile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.pidfile.pidfile" id="apidoc.element.strong-supervisor.pidfile.pidfile">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>pidfile
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create(file) {
+  if (isStale(file)) {
+    unlink(file);
+  }
+  write(file, process.pid);
+
+  process.on('exit', unlink.bind(null, file));
+
+  // We don't unlink on SIGINT or SIGTERM, because those could be handled and
+  // recovered from, 'exit' is absolutely final.
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.pidfile.create" id="apidoc.element.strong-supervisor.pidfile.create">
+        function <span class="apidocSignatureSpan">strong-supervisor.pidfile.</span>create
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create(file) {
+  if (isStale(file)) {
+    unlink(file);
+  }
+  write(file, process.pid);
+
+  process.on('exit', unlink.bind(null, file));
+
+  // We don't unlink on SIGINT or SIGTERM, because those could be handled and
+  // recovered from, 'exit' is absolutely final.
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+cluster.on('fork', setupChildLogger);
+
+logger.info('supervisor starting (pid %d)', process.pid);
+
+if (options.pid) {
+  try {
+    pidfile.<span class="apidocCodeKeywordSpan">create</span>(options.pid);
+  } catch (er) {
+    console.error('supervisor failed to create pid file: %s', er.message);
+    process.exit(1);
+  }
+}
+
+// Re-require this so that strong-agent (which may be required by now)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.pidfile.exists" id="apidoc.element.strong-supervisor.pidfile.exists">
+        function <span class="apidocSignatureSpan">strong-supervisor.pidfile.</span>exists
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function exists(file) {
+  return !isStale(file);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.printf_replacer" id="apidoc.module.strong-supervisor.printf_replacer">module strong-supervisor.printf_replacer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.printf_replacer.printf_replacer" id="apidoc.element.strong-supervisor.printf_replacer.printf_replacer">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>printf_replacer
+        <span class="apidocSignatureSpan">(template, replacements)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function printfReplacer(template, replacements) {
+  if (!(replacements instanceof Object)) {
+    return template;
+  }
+
+  return template.replace(/%[^%]/mg, function(match, offset, string) {
+    var char = match[1];
+    var escaped = offset &gt; 0 &amp;&amp; string[offset - 1] === '%';
+    if (!escaped &amp;&amp; char in replacements) {
+      match = replacements[char];
+    }
+    return match;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.runctl" id="apidoc.module.strong-supervisor.runctl">module strong-supervisor.runctl</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.runctl.notifyStarted" id="apidoc.element.strong-supervisor.runctl.notifyStarted">
+        function <span class="apidocSignatureSpan">strong-supervisor.runctl.</span>notifyStarted
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notifyStarted = function () {
+  // Must not be done synchronously in the require, we don't know the app name
+  // until after run has found the app, and change to its directory.
+  ctlChannel.notify({
+    wid: 0,
+    cmd: 'started',
+    pid: process.pid,
+    ppid: 0,  // Value is not known for the master process
+    pst: master.startTime,
+    appName: app.name(),
+    agentVersion: agentVersion,
+    debuggerVersion: debuggerVersion,
+    nodeVersion: process.version,
+    osVersion: osVersion,
+    setSize: master.size,
+  });
+
+  // Status notifications usually come after every fork and exit, but if there
+  // are no forks, we still want at least one status notification sent. Note
+  // that size may be undefined, which isn't &gt; or &lt; than 1.
+  if (!(master.options.size &gt;= 1)) {
+    notifyStatus();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  // Re-require this so that strong-agent (which may be required by now)
+  // notices, and attaches cluster control instrumentation.
+  require('strong-cluster-control');
+
+  control.on('start', function() {
+runctl.<span class="apidocCodeKeywordSpan">notifyStarted</span>();
+
+if (!options.channel) return;
+
+logger.info('supervisor listening on \'%s\'', options.channel);
+
+runctl.start({
+  channel: options.channel,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.runctl.onRequest" id="apidoc.element.strong-supervisor.runctl.onRequest">
+        function <span class="apidocSignatureSpan">strong-supervisor.runctl.</span>onRequest
+        <span class="apidocSignatureSpan">(req, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function onRequest(req, callback) {
+<span class="apidocCodeCommentSpan">  /* eslint no-redeclare:0 */
+</span>  debug('request %s', debug.json(req));
+
+  var cmd = req.cmd;
+  var rsp = {
+  };
+
+  if (cmd === 'status') {
+    rsp = clusterStatus();
+  } else if (cmd === 'npm-ls') {
+    rsp = null;
+    npmls.read('.', function(er, data) {
+      return callback(er ? {error: er.message} : data);
+    });
+  } else if (cmd === 'set-size') {
+    try {
+      if (/cpu/i.test(req.size))
+        req.size = os.cpus().length;
+      else
+        req.size = +req.size;
+      master.setSize(req.size);
+    } catch (er) {
+      rsp.error = er.message;
+    }
+
+  } else if (cmd === 'stop') {
+    try {
+      master.stop();
+    } catch (er) {
+      rsp.error = er.message;
+    }
+
+  } else if (cmd === 'restart') {
+    try {
+      process.chdir(process.env.PWD);
+    } catch (er) {
+      // Ignore, things will probably go poorly, but we don't want the master to
+      // die even if the working directory becomes inaccessible, or the PWD,
+      // probably a current link, becomes invalid.
+    }
+    try {
+      master.restart();
+    } catch (er) {
+      rsp.error = er.message;
+    }
+
+  } else if (cmd === 'disconnect') {
+    cluster.disconnect();
+
+  } else if (cmd === 'fork') {
+    rsp = null;
+    var worker = cluster.fork();
+    // worker emits its own 'fork' _after_ s-c-c has augmented it
+    worker.once('fork', function() {
+      var rsp = {
+        workerID: worker.id,
+        processID: worker.process.pid,
+        pst: worker.startTime,
+      };
+      callback(rsp);
+    });
+
+  } else if (cmd === 'env-set') {
+    for (var k in req.env) {
+      process.env[k] = req.env[k];
+    }
+    rsp = requestAllTargets(req, callback);
+
+  } else if (cmd === 'env-unset') {
+    for (var k in req.env) {
+      delete process.env[req.env[k]];
+    }
+    rsp = requestAllTargets(req, callback);
+
+  } else if (cmd === 'tracing') {
+    var enabled = !!process.env.STRONGLOOP_TRACING;
+    if (req.enabled &amp;&amp; !enabled) {
+      process.env.STRONGLOOP_TRACING = 1;
+    } else if (!req.enabled &amp;&amp; enabled) {
+      delete process.env.STRONGLOOP_TRACING;
+    } else {
+      return;
+    }
+
+    try {
+      master.restart();
+    } catch (er) {
+      rsp.error = er.message;
+    }
+
+  } else if (cmd === 'signal') {
+    if (req.pid !== process.pid) {
+     // Do nothing
+    } else if (listenerCount(process, req.signame) &gt; 0) {
+      // If there are any listeners for this signal, emit it on the
+      // process object.
+      process.emit(req.signame);
+    } else {
+      // If there are no listeners, use the default action.
+      process.kill(process.pid, req.signame);
+    }
+
+  } else {
+    // Pass any others off to the target
+    rsp = requestOfTarget(req, rsp, callback);
+  }
+
+  if (callback &amp;&amp; rsp) {
+    process.nextTick(callback.bind(null, rsp));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.runctl.start" id="apidoc.element.strong-supervisor.runctl.start">
+        function <span class="apidocSignatureSpan">strong-supervisor.runctl.</span>start
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function start(options) {
+  var logger = options.logger;
+
+  // XXX(sam) I don't like this 'last one wins' approach, but its impossible to
+  // prevent the channel outliving sl-run under all conditions, this is the only
+  // robust way I've found.
+  try {
+    fs.unlinkSync(options.channel);
+  } catch (er) {
+<span class="apidocCodeCommentSpan">    /* eslint no-empty:0 */
+</span>    // Didn't exist
+  }
+
+  server.listen(options.channel);
+
+  server.on('error', function(er) {
+    logger.error('control channel failed to listen on `%s`: %s',
+                 options.channel, er);
+    throw er;
+  });
+
+  master.on('stop', function() {
+    server.close();
+  });
+  return server;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var logger = new Logger(process.stderr);
+
+// Attach targeted control listener to cluster, for both master and workers.
+require('./targetctl');
+
+// Wrap watcher start, for use in master and workers.
+function watcherStart(parentCtl) {
+watcher.<span class="apidocCodeKeywordSpan">start</span>(parentCtl, cluster, control, module.exports);
+}
+
+if (cluster.isWorker) {
+module.exports = {
+  isWorker: true,
+  isMaster: false,
+  logger: logger,
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.start_command" id="apidoc.module.strong-supervisor.start_command">module strong-supervisor.start_command</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.start_command.start_command" id="apidoc.element.strong-supervisor.start_command.start_command">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>start_command
+        <span class="apidocSignatureSpan">(pwd, argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveArgs(pwd, argv) {
+  var replacer = symlinkReplacer(pwd);
+  var cwd = fs.realpathSync(pwd);
+  var script = argv[2] || '.';
+  debug('resolving CWD: %j, path: %j', cwd, script);
+  var app = resolvePath(cwd, script);
+  var stat = app.stat;
+  if (app.error) {
+    return app;
+  }
+
+  if (stat.isFile()) {
+    // given path was either foo/app.js that exists or foo/app that doesn't
+    // exist but which node would treat ass foo/app.js, so we'll just find the
+    // the package's root directory and use that as the CWD when running the
+    // specified script.
+    return replacer(resolvePackageFromPath(app.cwd, app.path));
+  }
+
+  if (stat.isDirectory()) {
+    // The given path is a directory, so now we want to find the nearest
+    // package.json, use it as the CWD, and then perform an `npm start` like
+    // script resolution.
+    var absolutePath = path.resolve(app.cwd, app.path);
+    var pkgApp = resolvePackageFromPath(absolutePath);
+
+    // 1. try parsing scripts.start from the package.json
+    var pkgStart = resolvePackageStart(pkgApp.cwd);
+    if (!pkgStart.error) {
+      return replacer(pkgStart);
+    }
+
+    // 2. try server.js, app.js, index.js**, then default module resolution
+    // ** We explicitly check for index.js even though it will be checked by
+    //    the node module resolver because we prefer it over the package's main
+    //    in cases where they are different.
+    pkgApp.path = ifExists(pkgApp.cwd, 'server.js') ||
+                  ifExists(pkgApp.cwd, 'app.js') ||
+                  ifExists(pkgApp.cwd, 'index.js') ||
+                  requireable(pkgApp.cwd, pkgApp.path);
+    if (pkgApp.path) {
+      return replacer(pkgApp);
+    }
+  }
+
+  // The package.json doesn't say how to run it, and node can't decide.. time
+  // to error out and let the user know they need to be more specific.
+  return {error: Error('app is not a file or a directory ')};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.start_command.fromStart" id="apidoc.element.strong-supervisor.start_command.fromStart">
+        function <span class="apidocSignatureSpan">strong-supervisor.start_command.</span>fromStart
+        <span class="apidocSignatureSpan">(cwd, script)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fromStart(cwd, script) {
+  var scriptRegexp = /^(\S+)((?:\s+-\S+)*)?(?:\s+(\S+))(\s.*)?$/;
+  // use same default as npm
+  var parts = scriptRegexp.exec(script || 'node server.js');
+  // TODO: support extracting node options like --expose_gc and --harmony and
+  // alternative executors, like coffee.
+  // app.execPath = parts[1];
+  // app.execArgs = parts[2];
+  var resolved = ifExists(cwd, parts[3]) || requireable(cwd, parts[3]);
+  debug('script: [%j] %j =&gt; %j =&gt; %j via: ',
+        cwd, script, parts[3], resolved,
+        parts);
+  if (!resolved) {
+    return {error: Error('Could not resolve start script ' + script)};
+  }
+  return {cwd: cwd, path: resolved};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.start_command.resolveDir" id="apidoc.element.strong-supervisor.start_command.resolveDir">
+        function <span class="apidocSignatureSpan">strong-supervisor.start_command.</span>resolveDir
+        <span class="apidocSignatureSpan">(cwd, dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveDir(cwd, dir) {
+  var app = {
+    cwd: path.resolve(cwd, dir),
+    path: ifExists(cwd, 'server.js') || ifExists(cwd, 'app.js') || '.',
+    error: null,
+  };
+  return app;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.start_command.resolvePackageFromPath" id="apidoc.element.strong-supervisor.start_command.resolvePackageFromPath">
+        function <span class="apidocSignatureSpan">strong-supervisor.start_command.</span>resolvePackageFromPath
+        <span class="apidocSignatureSpan">(cwd, relative)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolvePackageFromPath(cwd, relative) {
+  var absolute = path.resolve(cwd, relative || '');
+  var dir = path.dirname(absolute);
+  var file = path.basename(absolute);
+  if (!relative) {
+    dir = absolute;
+    file = '';
+  }
+  // walk up the path until we find the package.json nearest to the app
+  while (!ifExists(dir, 'package.json')) {
+    file = path.join(path.basename(dir), file);
+    // hit root, return the fallback to running the script in its directory
+    if (dir === path.dirname(dir)) {
+      file = path.basename(absolute);
+      dir = path.dirname(absolute);
+      break;
+    }
+    dir = path.dirname(dir);
+  }
+  return {cwd: dir, path: file, error: null};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.start_command.resolvePath" id="apidoc.element.strong-supervisor.start_command.resolvePath">
+        function <span class="apidocSignatureSpan">strong-supervisor.start_command.</span>resolvePath
+        <span class="apidocSignatureSpan">(cwd, script)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolvePath(cwd, script) {
+  var app = {
+    cwd: cwd,
+    path: script,
+  };
+
+  try {
+    app.stat = fs.statSync(path.resolve(app.cwd, app.path));
+  } catch (er) {
+    // app.path isn't accessible, it may be a JS file given without the .js
+    // extension, which is something that `node` and require() both honour.
+    try {
+      app.path = require.resolve(path.resolve(app.cwd, app.path));
+      app.stat = fs.statSync(app.path);
+    } catch (er) {
+      // nope, it's just plain not there, giving up.
+      app.error = er;
+    }
+  }
+
+  return app;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.tracer" id="apidoc.module.strong-supervisor.tracer">module strong-supervisor.tracer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.tracer.tracer" id="apidoc.element.strong-supervisor.tracer.tracer">
+        function <span class="apidocSignatureSpan">strong-supervisor.</span>tracer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tracer() {
+  return TRACER;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.tracer.start" id="apidoc.element.strong-supervisor.tracer.start">
+        function <span class="apidocSignatureSpan">strong-supervisor.tracer.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function start() {
+  assert(!TRACER);
+  // This is delayed to allow process.env to be modified up until start time.
+  options.accountKey = app.name();
+  if (options.accountKey) {
+    // This is delayed because requiring appmetrics causes it to monkey-patch,
+    // which should not occur unless profiling or tracing is enabled.
+    options.lrtime = require('appmetrics').lrtime;
+    TRACER = require('strong-trace')(options);
+  }
+  return TRACER;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var logger = new Logger(process.stderr);
+
+// Attach targeted control listener to cluster, for both master and workers.
+require('./targetctl');
+
+// Wrap watcher start, for use in master and workers.
+function watcherStart(parentCtl) {
+watcher.<span class="apidocCodeKeywordSpan">start</span>(parentCtl, cluster, control, module.exports);
+}
+
+if (cluster.isWorker) {
+module.exports = {
+  isWorker: true,
+  isMaster: false,
+  logger: logger,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-supervisor.watcher" id="apidoc.module.strong-supervisor.watcher">module strong-supervisor.watcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-supervisor.watcher.start" id="apidoc.element.strong-supervisor.watcher.start">
+        function <span class="apidocSignatureSpan">strong-supervisor.watcher.</span>start
+        <span class="apidocSignatureSpan">(parentCtl, cluster, clusterControl, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (parentCtl, cluster, clusterControl, config) {
+  var bus;
+
+  // parentCtl is optional
+  // cluster and strong-cluster-control are injected to allow mocking
+  assert(cluster);
+  assert(clusterControl);
+
+  if (cluster.isMaster) {
+    bus = new EventEmitter;
+
+    clusterControl.on('fork', function(worker) {
+      worker.on('message', function(msg) {
+        var cmd = msg.cmd;
+        msg = msg.msg;
+
+        switch (cmd) {
+          case 'watcher:emit':
+            debug('emit %j: %s', msg.cmd, debug.json(msg));
+            bus.emit(msg.cmd, msg, worker);
+            break;
+          case 'watcher:send':
+            debug('notify %j: %s', msg.cmd, debug.json(msg));
+            parentCtl.notify(msg);
+            break;
+          default:
+            break;
+        }
+      });
+    });
+  }
+
+  this._watchers.forEach(function(watcher) {
+    var where = cluster.isWorker ? ':worker:' : ':master:';
+
+    var debug = require('./debug')('watcher' + where + watcher.name);
+
+    if (cluster.isWorker) {
+      debug('init');
+      watcher.worker({
+        config: config,
+        debug: debug,
+        emit: function emit(msg) {
+          debug('emit %s', debug.json(msg));
+          cluster.worker.send({
+            cmd: 'watcher:emit',
+            msg: msg,
+          });
+        },
+        send: function send(msg) {
+          debug('send %s', debug.json(msg));
+          cluster.worker.send({
+            cmd: 'watcher:send',
+            msg: msg,
+          });
+        },
+      });
+      return;
+    }
+
+    if (!parentCtl) {
+      debug('no parentctl');
+      return;
+    }
+
+    assert(cluster.isMaster);
+
+    debug('init: master? %j', !!watcher.master);
+    if (watcher.master) {
+      watcher.master({
+        config: config,
+        debug: debug,
+        emit: function emit(msg) {
+          // This is master, so fake a Worker object.
+          var worker = {
+            id: 0,
+            startTime: clusterControl.startTime,
+            process: process,
+          };
+          debug('emit %j: %s', msg.cmd, debug.json(msg));
+          bus.emit(msg.cmd, msg, worker);
+        },
+        on: function on(event, listener) {
+          debug('listen on %j', event);
+          bus.on(event, listener);
+        },
+        send: function notify(msg) {
+          debug('notify %s', debug.json(msg));
+          parentCtl.notify(msg);
+        },
+      });
+    }
+
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var logger = new Logger(process.stderr);
+
+// Attach targeted control listener to cluster, for both master and workers.
+require('./targetctl');
+
+// Wrap watcher start, for use in master and workers.
+function watcherStart(parentCtl) {
+watcher.<span class="apidocCodeKeywordSpan">start</span>(parentCtl, cluster, control, module.exports);
+}
+
+if (cluster.isWorker) {
+module.exports = {
+  isWorker: true,
+  isMaster: false,
+  logger: logger,
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
