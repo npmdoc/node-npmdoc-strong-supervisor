@@ -1,4 +1,7 @@
-# api documentation for  [strong-supervisor (v6.1.1)](https://github.com/strongloop/strong-supervisor)  [![npm package](https://img.shields.io/npm/v/npmdoc-strong-supervisor.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-strong-supervisor) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-strong-supervisor.svg)](https://travis-ci.org/npmdoc/node-npmdoc-strong-supervisor)
+# npmdoc-strong-supervisor
+
+#### api documentation for  [strong-supervisor (v6.1.1)](https://github.com/strongloop/strong-supervisor)  [![npm package](https://img.shields.io/npm/v/npmdoc-strong-supervisor.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-strong-supervisor) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-strong-supervisor.svg)](https://travis-ci.org/npmdoc/node-npmdoc-strong-supervisor)
+
 #### supervisor and monitor for node.js applications
 
 [![NPM](https://nodei.co/npm/strong-supervisor.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/strong-supervisor)
